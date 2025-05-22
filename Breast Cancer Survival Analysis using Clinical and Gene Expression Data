@@ -1,0 +1,96 @@
+🧬 Breast Cancer Survival Analysis using Clinical and Gene Expression Data
+🔍 Project Overview
+This project investigates how clinical features and gene expression patterns influence survival outcomes in breast cancer patients using the METABRIC dataset. I used Python, R, Excel, and Tableau to clean, 
+analyze, and visualize the data, integrating statistical methods with biological context to generate actionable insights.
+
+🎯 Goals
+Identify clinical factors associated with breast cancer survival.
+
+Explore the effect of gene expression (Z-score normalized) on patient outcomes.
+
+Use logistic regression and Kaplan-Meier survival analysis to evaluate significant predictors.
+
+📁 Dataset
+Source: METABRIC (Molecular Taxonomy of Breast Cancer International Consortium)
+
+Size: 1,980 breast cancer samples with clinical, genomic, and survival data
+
+Key fields:
+
+Clinical: Age, Tumor Stage, ER/PR/HER2 Status, Chemotherapy, Radiation
+
+Genomic: Gene expression (Z-scores) for ~25,000 genes
+
+Outcomes: Overall survival time and status
+
+🛠️ Tools & Techniques
+Task	                                      Tool
+Data Cleaning & Preprocessing	              Excel, Python (Pandas)
+Statistical Analysis	                      R (ANOVA, Tukey HSD, Logistic Regression, Survival Analysis)
+Visualization	                              Tableau, Python (Seaborn, Matplotlib), R (ggplot2)
+Bioinformatics Research	                    PubMed, NCBI Gene, GeneCards.org
+
+📊 Clinical Factors & Survival
+Correlation Analysis
+Explored pairwise relationships among clinical features.
+
+Found moderate correlations between:
+ER Status & Chemotherapy (r = 0.46)
+ER & PR Status (r = 0.53)
+Death from Cancer & Age at Diagnosis (r = 0.39)
+
+ER+/Chemotherapy Subgroup:
+Logistic regression showed patients who were ER+ and received chemotherapy had higher odds of survival.
+Created filtered tables and plots to support stratified analysis.
+
+Kaplan-Meier Survival Curve
+Compared ER+/PR+, ER+/PR−, ER−/PR+, and ER−/PR− subtypes.
+
+No statistically significant difference in survival between groups, suggesting other variables may influence prognosis.
+
+🧬 Gene Expression Analysis
+Method
+Selected genes with known roles in cancer:
+
+AHNAK (tumor suppressor)
+AURKA and CDC25A (oncogenes)
+LAMA2 (extracellular matrix remodeling, potential tumor suppressor)
+
+Split patients into overexpressed (Z > 2) and underexpressed (Z < -2) groups.
+Conducted Kaplan-Meier survival analysis and logistic regression.
+
+Key Findings
+Gene	                  Role	                                        Effect on Survival	                                      Notes
+AHNAK	               Tumor Suppressor	                            Higher expression = ↑ survival	                    Not statistically significant
+AURKA	                 Oncogene	                                  Higher expression = ↓ survival	                            Significant
+CDC25A	               Oncogene	                                  Higher expression = ↓ survival	                            Significant
+LAMA2	             Potential Tumor Suppressor	                    Higher expression = ↑ survival	                          Not significant
+
+📌 Logistic regression confirmed AURKA and CDC25A as significant predictors of poor survival in breast cancer.
+
+📈 Sample Visuals
+See /visualizations folder for:
+
+Kaplan-Meier survival curves by gene expression
+ER/PR subtype distributions
+Correlation heatmap of clinical factors
+Gene expression impact on survival (bar plots of hazard ratios)
+
+📚 References
+METABRIC Study – Nature Communications (2012)
+GeneCards.org – Gene Function Summaries
+NIH Kaplan-Meier Curve Explanation
+
+🧠 Insights
+Integrating clinical and molecular data enhances understanding of breast cancer survival.
+AURKA and CDC25A may be promising therapeutic targets.
+Personalized treatment strategies should consider both hormone receptor status and oncogene expression.
+
+📌 Future Work
+Multivariate survival models combining gene + clinical features
+Compare METABRIC with TCGA-BRCA dataset
+Build interactive dashboards (e.g., Streamlit or Shiny)
+
+👩‍💻 Author
+Laura Shannon, Ph.D.
+Molecular Biologist | Data Enthusiast
